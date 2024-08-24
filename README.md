@@ -1,13 +1,12 @@
 <p align="center"> <strong>Neovim Configuration:</strong>  </p>
 
-<p align="center"> <strong>This repository contains my customized Neovim setup, built on top of NvChad with my personal tweaks and optimizations.
-:</strong>  </p>
+<p align="center"> <strong>My Neovim setup, based on NvChad but with my own tweaks and optimizations.</strong>  </p>
 
 ## Features
 
-- **NvChad Base**: A modern, fast Neovim configuration that leverages the power of Lua.
-- **Personal Tweaks**: Custom keybindings, plugins, and UI enhancements tailored to my workflow.
-- **Optimized for Performance**: Minimalistic setup with a focus on speed and efficiency.
+- **NvChad Base**: A modern, fast Neovim setup using Lua for a smooth experience.
+- **Custom Tweaks**: Personalized keybindings, plugins, and UI changes to match my workflow.
+- **Performance-Driven**: A minimalist setup that keeps things speedy and efficient.
 
 ## Installation
 
