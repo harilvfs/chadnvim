@@ -19,6 +19,7 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
+```shell
 nvim-config/
 
 ├── base46/                       <strong> Theme and color configurations </strong> 
@@ -42,5 +43,5 @@ nvim-config/
 │   └── init.lua                  Initialization script for Lua modules
 ├── .stylua.toml                  StyLua configuration file for formatting Lua code
 └── lazy-lock.json                Lock file for lazy-loaded plugins
-
+```
 
