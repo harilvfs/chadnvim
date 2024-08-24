@@ -21,33 +21,26 @@ chmod +x setup.sh
 
 nvim-config/
 
-├── base46/                      # Theme and color configurations
-│   ├── integrations/            # Integrations with other plugins or tools
-│   ├── themes/                  # Collection of theme files
-│   ├── colors.lua               # Main color configuration file
-│   ├── glassy.lua               # Glassy effect configurations
-│   ├── init.lua                 # Initialization script for base46
-|   └── term.lua                 # Terminal color settings
-├── init.lua                     # Main Neovim configuration file
-├── lua/                         # Lua configuration files and modules
-│   ├── configs/                 # Directory for various configuration files
-│   ├── conform.lua              # Configuration for formatting tools
-│   ├── lazy.lua                 # Lazy loading configuration for plugins
-│   ├── lspconfig.lua            # LSP configurations
-│   ├── themes/                  # Additional themes and theme configurations
-│   ├── chadrc.lua               # Main configuration file for NvChad customizations
-│   ├── mapping.lua              # Key mappings and shortcuts
-│   ├── options.lua              # General Neovim options and settings
-│   ├── plugins/                 # Plugin configurations
-│   └── init.lua                 # Initialization script for Lua modules
-├── .stylua.toml                 # StyLua configuration file for formatting Lua code
-└── lazy-lock.json               # Lock file for lazy-loaded plugins
+├── base46/                       Theme and color configurations
+│   ├── integrations/             Integrations with other plugins or tools
+│   ├── themes/                   Collection of theme files
+│   ├── colors.lua                Main color configuration file
+│   ├── glassy.lua                Glassy effect configurations
+│   ├── init.lua                  Initialization script for base46
+|   └── term.lua                  Terminal color settings
+├── init.lua                      Main Neovim configuration file
+├── lua/                          Lua configuration files and modules
+│   ├── configs/                  Directory for various configuration files
+│   ├── conform.lua               Configuration for formatting tools
+│   ├── lazy.lua                  Lazy loading configuration for plugins
+│   ├── lspconfig.lua             LSP configurations
+│   ├── themes/                   Additional themes and theme configurations
+│   ├── chadrc.lua                Main configuration file for NvChad customizations
+│   ├── mapping.lua               Key mappings and shortcuts
+│   ├── options.lua               General Neovim options and settings
+│   ├── plugins/                  Plugin configurations
+│   └── init.lua                  Initialization script for Lua modules
+├── .stylua.toml                  StyLua configuration file for formatting Lua code
+└── lazy-lock.json                Lock file for lazy-loaded plugins
 
-nvim-config/
-├── setup.sh               # Setup script to install and configure Neovim
-├── init.lua               # Main Neovim configuration file
-├── lua/                   # Lua configurations and custom modules
-│   ├── plugins.lua        # Plugin manager and plugin configurations
-│   └── settings.lua       # Custom settings and keybindings
-└── snippets/              # Collection of code snippets
 
