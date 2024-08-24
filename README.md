@@ -1,4 +1,4 @@
-<p align="center"> <strong>Neovim Configuration:</strong>  </p>
+<p align="center"> <strong>NEOVIM</strong>  </p>
 
 <p align="center"> <strong>My Neovim setup, based on NvChad but with my own tweaks and optimizations.</strong>  </p>
 
