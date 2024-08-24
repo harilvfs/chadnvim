@@ -1,6 +1,7 @@
-# My Neovim Configuration
+<p align="center"> <strong>Neovim Configuration:</strong>  </p>
 
-This repository contains my customized Neovim setup, built on top of NvChad with my personal tweaks and optimizations.
+<p align="center"> <strong>This repository contains my customized Neovim setup, built on top of NvChad with my personal tweaks and optimizations.
+:</strong>  </p>
 
 ## Features
 
@@ -18,6 +19,8 @@ cd nvim/
 chmod +x setup.sh
 ./setup.sh
 ```
+
+<p align="center"> <strong>Quick overview of the repository structure:</strong>  </p>
 
 ```shell
 nvim-config/
