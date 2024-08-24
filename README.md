@@ -21,7 +21,7 @@ chmod +x setup.sh
 
 nvim-config/
 
-├── base46/                       Theme and color configurations
+├── base46/                     <p> <strong> Theme and color configurations </strong> </p>
 │   ├── integrations/             Integrations with other plugins or tools
 │   ├── themes/                   Collection of theme files
 │   ├── colors.lua                Main color configuration file
