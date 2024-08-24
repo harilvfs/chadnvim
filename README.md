@@ -20,6 +20,7 @@ chmod +x setup.sh
 ```
 
 nvim-config/
+
 ├── base46/                      # Theme and color configurations
 │   ├── integrations/            # Integrations with other plugins or tools
 │   ├── themes/                  # Collection of theme files
