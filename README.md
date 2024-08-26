@@ -21,6 +21,12 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
+Or, Simply Run This Curl Command:
+
+```shell
+curl -fsSL https://raw.githubusercontent.com/aayushx402/nvim/main/setup.sh | sh
+```
+
 <p align="center"> <strong>Quick overview of the repository structure:</strong>  </p>
 
 ```shell
