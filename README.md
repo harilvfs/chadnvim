@@ -2,7 +2,7 @@
 
 <p align="center"> <strong>My Neovim setup, based on NvChad but with my own tweaks and optimizations.</strong>  </p>
 
-![NVIM](https://github.com/aayushx402/images/blob/main/nvim/2024-08-24_22-26.png)
+![NVIM](https://github.com/harilvfs/assets/blob/main/nvim/2024-08-24_22-26.png)
 
 ## Features
 
@@ -24,7 +24,7 @@ chmod +x setup.sh
 Or, Simply Run This Curl Command:
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/aayushx402/nvim/main/setup.sh | sh
+curl -fsSL https://raw.githubusercontent.com/harilvfs/nvim/main/setup.sh | sh
 ```
 
 <p align="center"> <strong>Quick overview of the repository structure:</strong>  </p>
