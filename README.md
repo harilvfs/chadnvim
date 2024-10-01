@@ -15,8 +15,8 @@
 To install my Neovim configuration, clone this repository and run the setup script:
 
 ```shell
-git clone https://github.com/aayushx402/nvim
-cd nvim/
+git clone https://github.com/harilvfs/chadnvim
+cd chadnvim/
 chmod +x setup.sh
 ./setup.sh
 ```
@@ -24,7 +24,7 @@ chmod +x setup.sh
 Or, Simply Run This Curl Command:
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/harilvfs/nvim/main/setup.sh | sh
+curl -fsSL https://raw.githubusercontent.com/harilvfs/chadnvim/main/setup.sh | sh
 ```
 
 <p align="center"> <strong>Quick overview of the repository structure:</strong>  </p>
