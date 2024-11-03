@@ -35,8 +35,8 @@ echo "Moving old configuration to Documents..."
 # Clone the Neovim configuration repository
 echo -e "\033[1;34mCloning Neovim configuration repository...\033[0m"
  cd $HOME
- git clone https://github.com/aayushx402/nvim.git
- cd nvim 
+ git clone https://github.com/harilvfs/chadnvim
+ cd chadnvim
  cp -r nvim "$HOME/.config"
 
 echo -e "\033[1;32mApplying new Neovim configuration...\033[0m"
