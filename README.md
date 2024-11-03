@@ -10,6 +10,9 @@
 - **Custom Tweaks**: Personalized keybindings, plugins, and UI changes to match my workflow.
 - **Performance-Driven**: A minimalist setup that keeps things speedy and efficient.
 
+> [!Note]
+> If you encounter any issues, please provide feedback or open an issue.
+
 ## Installation
 
 To install my Neovim configuration, clone this repository and run the setup script:
