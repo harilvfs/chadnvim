@@ -1,5 +1,6 @@
 -- This file needs to have same structure as nvconfig.lua 
--- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
+-- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
+-- Please read that file to know all available options :( 
 
 ---@type ChadrcConfig
 local M = {}
@@ -12,15 +13,5 @@ M.base46 = {
 	-- 	["@comment"] = { italic = true },
 	-- },
 }
-
-
-vim.cmd [[
-  autocmd VimEnter * NvimTreeToggle | wincmd p
-]]
-
-vim.o.showtabline = 2
-
-
-
 
 return M
