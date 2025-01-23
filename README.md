@@ -1,6 +1,7 @@
 <p align="center"> <strong>NEOVIM</strong>  </p>
 
-<p align="center"> <strong>My Neovim setup, based on `NvChad` but with my own tweaks and optimizations.</strong>  </p>
+<p align="center">
+<strong>My Neovim setup, based on NvChad but with my own tweaks and optimizations.</strong>  </p>
 
 ![NVIM](https://raw.githubusercontent.com/harilvfs/assets/refs/heads/main/nvim/nvim.png)
 
