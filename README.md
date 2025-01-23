@@ -1,6 +1,6 @@
 <p align="center"> <strong>NEOVIM</strong>  </p>
 
-<p align="center"> <strong>My Neovim setup, based on NvChad but with my own tweaks and optimizations.</strong>  </p>
+<p align="center"> <strong>My Neovim setup, based on `NvChad` but with my own tweaks and optimizations.</strong>  </p>
 
 ![NVIM](https://raw.githubusercontent.com/harilvfs/assets/refs/heads/main/nvim/nvim.png)
 
@@ -30,7 +30,7 @@ Or, Simply Run This Curl Command:
 curl -fsSL https://raw.githubusercontent.com/harilvfs/chadnvim/main/setup.sh | sh
 ```
 
-<p align="center"> <strong>Quick overview of the nvim dir:</strong>  </p>
+<p align="center"> <strong>Quick overview of the `Nvim` Dir:</strong>  </p>
 
 ```shell
 nvim
