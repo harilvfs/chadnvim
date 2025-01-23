@@ -30,7 +30,7 @@ Or, Simply Run This Curl Command:
 curl -fsSL https://raw.githubusercontent.com/harilvfs/chadnvim/main/setup.sh | sh
 ```
 
-<p align="center"> <strong>Quick overview of the repository structure:</strong>  </p>
+<p align="center"> <strong>Quick overview of the nvim dir:</strong>  </p>
 
 ```shell
 nvim
