@@ -2,21 +2,32 @@
 
 <p align="center"> <strong>My Neovim setup, based on NvChad but with my own tweaks and optimizations.</strong>  </p>
 
+![NVIM](https://github.com/harilvfs/assets/blob/main/nvim/2024-08-24_22-26.png)
+
 ## Features
 
 - **NvChad Base**: A modern, fast Neovim setup using Lua for a smooth experience.
 - **Custom Tweaks**: Personalized keybindings, plugins, and UI changes to match my workflow.
 - **Performance-Driven**: A minimalist setup that keeps things speedy and efficient.
 
+> [!Note]
+> If you encounter any issues, please provide feedback or open an issue.
+
 ## Installation
 
 To install my Neovim configuration, clone this repository and run the setup script:
 
 ```shell
-git clone https://github.com/aayushx402/nvim
-cd nvim/
+git clone https://github.com/harilvfs/chadnvim
+cd chadnvim/
 chmod +x setup.sh
 ./setup.sh
+```
+
+Or, Simply Run This Curl Command:
+
+```shell
+curl -fsSL https://raw.githubusercontent.com/harilvfs/chadnvim/main/setup.sh | sh
 ```
 
 <p align="center"> <strong>Quick overview of the repository structure:</strong>  </p>
