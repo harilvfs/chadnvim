@@ -15,6 +15,7 @@
 > Ensure you download the Lua language server from your distribution's package manager.
 > 
 > After installing `lua-language-server`, verify the installation by running the command: `which lua-language-server`.
+> 
 > Then, add the following to your `~/.zshrc` or `~/.bashrc` to include the Lua language server in your environment:
 > ```sh
 > export PATH="$PATH:/path/to/lua-language-server"
