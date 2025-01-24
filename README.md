@@ -17,7 +17,7 @@
 > ```sh
 > export PATH="$PATH:/path/to/lua-language-server"
 > ```
-> Replace `/path/to/lua-language-server/bin` with the actual path to the Lua language server's `bin` directory.
+> Replace `/path/to/lua-language-server` with the actual path to the Lua language server's `bin` directory.
 
 ## Installation
 
