@@ -58,7 +58,7 @@ if [ "$PACKAGE_MANAGER" = "none" ]; then
 fi
 
 echo -e "\n${BLUE}:: Checking required dependencies...${RESET}"
-install_if_missing "nvim" "$PACKAGE_MANAGER"
+install_if_missing "neovim" "$PACKAGE_MANAGER"
 install_if_missing "vim" "$PACKAGE_MANAGER"
 
 CONFIG_DIR="$HOME/.config/nvim"
