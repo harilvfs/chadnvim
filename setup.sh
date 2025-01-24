@@ -8,19 +8,58 @@ RESET="\033[0m"
 
 echo -e "${BLUE}Setting up NvChad Neovim configuration with tweaks...${RESET}"
 
+detect_package_manager() {
+  if command -v apt &> /dev/null; then
+    echo "apt"
+  elif command -v dnf &> /dev/null; then
+    echo "dnf"
+  elif command -v zypper &> /dev/null; then
+    echo "zypper"
+  elif command -v pacman &> /dev/null; then
+    echo "pacman"
+  else
+    echo "none"
+  fi
+}
+
 install_if_missing() {
   local package=$1
+  local package_manager=$2
+
   if ! command -v "$package" &> /dev/null; then
     echo -e "${RED}$package is not installed. Installing...${RESET}"
-    sudo pacman -S "$package" --noconfirm
+    case "$package_manager" in
+      apt)
+        sudo apt update && sudo apt install -y "$package"
+        ;;
+      dnf)
+        sudo dnf install -y "$package"
+        ;;
+      zypper)
+        sudo zypper install -y "$package"
+        ;;
+      pacman)
+        sudo pacman -S "$package" --noconfirm
+        ;;
+      *)
+        echo -e "${RED}No supported package manager found. Please install $package manually.${RESET}"
+        exit 1
+        ;;
+    esac
   else
     echo -e "${GREEN}$package is already installed.${RESET}"
   fi
 }
 
-echo -e "\n${BLUE}::Checking required dependencies...${RESET}"
-install_if_missing "nvim"
-install_if_missing "vim"
+PACKAGE_MANAGER=$(detect_package_manager)
+if [ "$PACKAGE_MANAGER" = "none" ]; then
+  echo -e "${RED}No supported package manager found on this system. Exiting...${RESET}"
+  exit 1
+fi
+
+echo -e "\n${BLUE}:: Checking required dependencies...${RESET}"
+install_if_missing "nvim" "$PACKAGE_MANAGER"
+install_if_missing "vim" "$PACKAGE_MANAGER"
 
 CONFIG_DIR="$HOME/.config/nvim"
 BACKUP_DIR="$HOME/Documents/nvim-backup-$(date +%Y%m%d%H%M%S)"
