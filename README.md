@@ -11,8 +11,13 @@
 - **Custom Tweaks**: Personalized keybindings, plugins, and UI changes to match my workflow.
 - **Performance-Driven**: A minimalist setup that keeps things speedy and efficient.
 
-> [!Note]
-> If you encounter any issues, please provide feedback or open an issue.
+> [!NOTE]  
+> Ensure you download the Lua language server from your distribution's package manager.  
+> Then, add the following to your `~/.zshrc` or `~/.bashrc` to include the Lua language server in your environment:  
+> ```sh
+> export PATH="$PATH:/path/to/lua-language-server/bin"
+> ```
+> Replace `/path/to/lua-language-server/bin` with the actual path to the Lua language server's `bin` directory.
 
 ## Installation
 
