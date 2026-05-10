@@ -37,7 +37,7 @@ install_if_missing "git"    "$PM"
 
 CONFIG_DIR="$HOME/.config/nvim"
 if [ -d "$CONFIG_DIR" ]; then
-    BACKUP="$HOME/Documents/nvim-backup-$(date +%Y%m%d%H%M%S)"
+    BACKUP="$HOME/.config/nvim-backup-$(date +%Y%m%d%H%M%S)"
     msg "$YELLOW" "Backing up existing config to $BACKUP"
     mv "$CONFIG_DIR" "$BACKUP"
 fi
