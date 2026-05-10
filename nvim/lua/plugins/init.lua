@@ -5,44 +5,6 @@ return {
     opts = require "configs.conform",
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
-  {
-  "neovim/nvim-lspconfig",
-  lazy = false,
-  config = function()
-    local lspconfig = require("lspconfig")
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
-    local capabilities = cmp_nvim_lsp.default_capabilities()
-
-    local servers = {
-      "lua_ls",        -- Lua
-      "pyright",       -- Python
-      "clangd",        -- C/C++
-      "rust_analyzer", -- Rust
-      "bashls",        -- Bash
-      "jsonls",        -- JSON
-      "yamlls",        -- YAML
-    }
-
-    for _, server in ipairs(servers) do
-      local opts = {}
-
-      if server == "clangd" then
-        opts = {
-          capabilities = capabilities,
-          cmd = {
-            "clangd",
-            "--offset-encoding=utf-16",
-          },
-        }
-      end
-
-      lspconfig[server].setup(opts)
-    end
-  end
-  },
-
   {
   "williamboman/mason.nvim",
   lazy = false,
@@ -158,13 +120,6 @@ return {
     end,
   },
 
-    -- GitHub Copilot
-  {
-    "github/copilot.vim",
-    lazy = false,
-    event = "InsertEnter",
-  },
-
     -- Rust support
   {
     "rust-lang/rust.vim",
@@ -172,13 +127,7 @@ return {
     ft = "rust",
   },
 
-    -- Clang autocompletion
-  {
-    "deoplete-plugins/deoplete-clang",
-    lazy = false,
-  },
-
-    -- Null-ls for diagnostics and formatting
+  -- Null-ls for diagnostics and formatting
   {
     "jose-elias-alvarez/null-ls.nvim",
     lazy = false,
@@ -194,16 +143,12 @@ return {
     lazy = false,
   },
 
-    -- Markview for markdown preview
   {
     "OXY2DEV/markview.nvim",
-    lazy = false,      -- Recommended
-    -- ft = "markdown" -- If you decide to lazy-load anyway
+    lazy = false,
 
-    dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        "nvim-tree/nvim-web-devicons"
-    }
+    -- Completion for `blink.cmp`
+    -- dependencies = { "saghen/blink.cmp" },
   },
 
     -- Dropbar for breadcrumbs
@@ -233,26 +178,6 @@ return {
     opts = {
         -- your configuration
     },
-  },
-
-  {
-    "nvzone/typr",
-    dependencies = "nvzone/volt",
-    opts = {},
-    cmd = { "Typr", "TyprStats" },
-  },
-
-  {
-  "rachartier/tiny-inline-diagnostic.nvim",
-  lazy = false,
-  event = "LspAttach",  -- Load only when LSP starts
-  config = function()
-    require('tiny-inline-diagnostic').setup({
-      highlight = "DiagnosticVirtualTextError", -- Adjust highlight group
-      prefix = "⚠ ", -- Add a prefix if needed
-    })
-    vim.diagnostic.config({ virtual_text = false }) -- Disable native inline diagnostics
-  end
   },
 
 ---@type LazySpec
@@ -320,16 +245,14 @@ return {
     vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
     vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
   end
-  }
+  },
 
+  {
+  "sindrets/diffview.nvim",
+  lazy = false,
+  config = function()
+    require("diffview").setup({})
+  end,
+  },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
   }
