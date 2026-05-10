@@ -11,17 +11,6 @@
 - **Custom Tweaks**: Personalized keybindings, plugins, and UI changes to match my workflow.
 - **Performance-Driven**: A minimalist setup that keeps things speedy and efficient.
 
-> [!NOTE]  
-> Ensure you download the Lua language server from your distribution's package manager.
-> 
-> After installing `lua-language-server`, verify the installation by running the command: `which lua-language-server`.
-> 
-> Then, add the following to your `~/.zshrc` or `~/.bashrc` to include the Lua language server in your environment:
-> ```sh
-> export PATH="$PATH:/path/to/lua-language-server"
-> ```
-> Replace `/path/to/lua-language-server` with the actual path to the Lua language server's `bin` directory.
-
 ## Installation
 
 To install my Neovim configuration, clone this repository and run the setup script:
@@ -42,18 +31,17 @@ curl -fsSL https://raw.githubusercontent.com/harilvfs/chadnvim/main/setup.sh | s
 <p align="center"> <strong>Quick overview of the Nvim Dir:</strong>  </p>
 
 ```shell
-nvim
-├── init.lua                    # Main entry point for Neovim configuration.
-├── lazy-lock.json              # Auto-generated lock file for plugins managed by Lazy.nvim.
-└── lua                         # Lua directory for modular configuration.
-    ├── chadrc.lua              # User-specific settings and overrides for the configuration.
-    ├── configs                 # Directory for specific plugin configurations.
-    │   ├── conform.lua         # Configuration for Conform (formatting plugin).
-    │   ├── lazy.lua            # Plugin manager (Lazy.nvim) configuration.
-    │   ├── lspconfig.lua       # LSP (Language Server Protocol) configuration for Neovim.
-    │   └── null-ls.lua         # Configuration for Null-ls (code linting/formatting integration).
-    ├── mappings.lua            # Key mappings and shortcuts for Neovim.
-    ├── options.lua             # General Neovim options/settings.
-    └── plugins                 # Directory for plugin definitions and configurations.
-        └── init.lua            # List of plugins and their initialization/configuration.
+├── init.lua
+├── lua
+│   ├── chadrc.lua
+│   ├── configs
+│   │   ├── conform.lua
+│   │   ├── lazy.lua
+│   │   ├── lspconfig.lua
+│   │   └── null-ls.lua
+│   ├── mappings.lua
+│   ├── options.lua
+│   └── plugins
+│       └── init.lua
 ```
+
