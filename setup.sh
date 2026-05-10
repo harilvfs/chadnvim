@@ -1,95 +1,57 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 BLUE="\033[1;34m"
 GREEN="\033[1;32m"
 YELLOW="\033[1;33m"
 RED="\033[1;31m"
-RESET="\033[0m"
+NC="\033[0m"
 
-echo -e "${BLUE}Setting up NvChad Neovim configuration with tweaks...${RESET}"
+msg()  { printf "%b:: %s%b\n" "$1" "$2" "$NC"; }
 
-detect_package_manager() {
-  if command -v apt &> /dev/null; then
-    echo "apt"
-  elif command -v dnf &> /dev/null; then
-    echo "dnf"
-  elif command -v zypper &> /dev/null; then
-    echo "zypper"
-  elif command -v pacman &> /dev/null; then
-    echo "pacman"
-  else
+detect_pkg_manager() {
+    for pm in apt dnf zypper pacman; do
+        command -v "$pm" &>/dev/null && echo "$pm" && return
+    done
     echo "none"
-  fi
 }
 
 install_if_missing() {
-  local package=$1
-  local package_manager=$2
-
-  if ! command -v "$package" &> /dev/null; then
-    echo -e "${RED}$package is not installed. Installing...${RESET}"
-    case "$package_manager" in
-      apt)
-        sudo apt update && sudo apt install -y "$package"
-        ;;
-      dnf)
-        sudo dnf install -y "$package"
-        ;;
-      zypper)
-        sudo zypper install -y "$package"
-        ;;
-      pacman)
-        sudo pacman -S "$package" --noconfirm
-        ;;
-      *)
-        echo -e "${RED}No supported package manager found. Please install $package manually.${RESET}"
-        exit 1
-        ;;
+    local pkg="$1" pm="$2"
+    command -v "$pkg" &>/dev/null && { msg "$GREEN" "$pkg is already installed."; return; }
+    msg "$RED" "$pkg not found. Installing..."
+    case "$pm" in
+        apt)    sudo apt update && sudo apt install -y "$pkg" ;;
+        dnf)    sudo dnf install -y "$pkg" ;;
+        zypper) sudo zypper install -y "$pkg" ;;
+        pacman) sudo pacman -S --noconfirm "$pkg" ;;
+        *)      msg "$RED" "No supported package manager. Install $pkg manually."; exit 1 ;;
     esac
-  else
-    echo -e "${GREEN}$package is already installed.${RESET}"
-  fi
 }
 
-PACKAGE_MANAGER=$(detect_package_manager)
-if [ "$PACKAGE_MANAGER" = "none" ]; then
-  echo -e "${RED}No supported package manager found on this system. Exiting...${RESET}"
-  exit 1
-fi
+PM=$(detect_pkg_manager)
+[ "$PM" = "none" ] && { msg "$RED" "No supported package manager found. Exiting."; exit 1; }
 
-echo -e "\n${BLUE}:: Checking required dependencies...${RESET}"
-install_if_missing "neovim" "$PACKAGE_MANAGER"
-install_if_missing "vim" "$PACKAGE_MANAGER"
+msg "$BLUE" "Checking dependencies..."
+install_if_missing "nvim" "$PM"
+install_if_missing "git"    "$PM"
 
 CONFIG_DIR="$HOME/.config/nvim"
-BACKUP_DIR="$HOME/Documents/nvim-backup-$(date +%Y%m%d%H%M%S)"
 if [ -d "$CONFIG_DIR" ]; then
-  echo -e "${YELLOW}:: Existing Neovim configuration detected.${RESET}"
-  echo ":: Backing up old configuration to $BACKUP_DIR..."
-  mv "$CONFIG_DIR" "$BACKUP_DIR"
-else
-  echo -e "${GREEN}No existing Neovim configuration found.${RESET}"
+    BACKUP="$HOME/Documents/nvim-backup-$(date +%Y%m%d%H%M%S)"
+    msg "$YELLOW" "Backing up existing config to $BACKUP"
+    mv "$CONFIG_DIR" "$BACKUP"
 fi
 
-echo -e "\n${BLUE}:: Cloning NvChad Neovim configuration repository...${RESET}"
-REPO_URL="https://github.com/harilvfs/chadnvim"
-CLONE_DIR="$HOME/chadnvim"
-if [ -d "$CLONE_DIR" ]; then
-  echo -e "${YELLOW}:: Cleaning up old clone directory...${RESET}"
-  rm -rf "$CLONE_DIR"
-fi
-
-git clone "$REPO_URL" "$CLONE_DIR" || {
-  echo -e "${RED}Failed to clone the repository. Exiting...${RESET}"
-  exit 1
+msg "$BLUE" "Cloning chadnvim..."
+CLONE_DIR=$(mktemp -d)
+git clone https://github.com/harilvfs/chadnvim "$CLONE_DIR" || {
+    msg "$RED" "Failed to clone repository. Exiting."
+    exit 1
 }
 
-echo -e "\n${BLUE}:: Applying Neovim configuration...${RESET}"
-if [ -d "$CLONE_DIR/nvim" ]; then
-  cp -r "$CLONE_DIR/nvim" "$HOME/.config"
-else
-  echo -e "${RED}Error: The cloned repository does not contain an 'nvim' folder.${RESET}"
-  exit 1
-fi
+[ ! -d "$CLONE_DIR/nvim" ] && { msg "$RED" "No 'nvim' folder found in repo. Exiting."; exit 1; }
 
-echo -e "\n${GREEN}Neovim configuration applied successfully! Enjoy!${RESET}"
+cp -r "$CLONE_DIR/nvim" "$HOME/.config/"
+rm -rf "$CLONE_DIR"
+
+msg "$GREEN" "NvChad configuration done!"
